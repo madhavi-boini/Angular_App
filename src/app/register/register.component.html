@@ -1,0 +1,25 @@
+<div class="container ">
+    <div class="display-5 text-primary text-center mt-4">REGISTER</div>
+
+    <div class="form bg-light form-control mt-4 p-3">
+    <label  for="fname ">First Name</label>
+    <input class="form-control" type="text" name="fname" id="fname" minlength="3" #ref="ngModel" ngModel>
+    <p *ngIf=" ref.errors?.minlength" class="text-danger">*This field is required a minimum length of 3</p>
+    <br>
+    <label  for="lname">Last Name</label>
+    <input class="form-control" type="text"  name="lname" id="lname" >
+    <br>
+    <label  for="dob">Date Of Birth</label>
+    <input class="form-control" type="date" name="dob" id="dob" placeholder="dd-mm-yyyy">
+    <br>
+    <label for="id">Email Id</label>
+    <input class="form-control"type="email" name="id" id="id" #ref1="ngModel" ngModel>
+    <p *ngIf="ref1.touched && ref1.invalid"class="text-danger" >* this field is required</p>
+    <br>
+    <label for="pw">Password</label>
+    <input class="form-control"type="password" pattern="\d[A-Z]" ref="ngModel" name="pw" id="pw" ngModel>
+    <p *ngIf="ref.errors?.pattern" class="text-danger">Password Should contain atleast one<br>
+    digit<br>Capital letter</p>
+    <button class="btn btn-primary d-block mx-auto m-3" type="submit">Register</button>
+</div>
+</div>

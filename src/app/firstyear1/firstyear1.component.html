@@ -1,0 +1,17 @@
+<table class="table table-borderless table-secondary">
+  <thead>
+    <tr>
+      <th  >ROLL NUMBER</th>
+      <th >NAME</th>
+      <th>PHOTO</th>
+    </tr>
+  </thead>
+  <br>
+  <tbody>
+    <tr *ngFor="let n of data">
+      <td>{{n.r}}</td>
+      <td>{{n.f}}</td>
+      <td><img [src]=n.src width="50" height="40"></td>
+    </tr>
+  </tbody>
+</table>

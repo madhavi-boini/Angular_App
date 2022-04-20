@@ -1,0 +1,35 @@
+<!-- <table class="table table-borderless table-secondary">
+  <thead>
+    <tr>
+      <th  >ROLL NUMBER</th>
+      <th >NAME</th>
+      <th>PHOTO</th>
+    </tr>
+  </thead>
+  <br>
+  <tbody>
+    <tr *ngFor="let n of data">
+      <td>{{n.r}}</td>
+      <td>{{n.f}}</td>
+      <td><img [src]=n.src width="50" height="40"></td>
+    </tr>
+  </tbody>
+</table> -->
+<div class="container">
+     <input  type="text" class="form-control my-4" placeholder="Search by name....." [(ngModel)]= "searchTerm2"> 
+
+  <table class="table">
+  <tr> 
+    <th>POST ID</th>
+    <th>ID</th>    
+    <th>NAME</th>    
+    <th>EMAIL</th>    
+    </tr>   
+    <tr *ngFor="let n of data | search2:searchTerm2 " class="p-3">
+    <td>{{n.postId }}</td>
+    <td>{{n.id}}</td>
+    <td>{{n.name|uppercase}}</td>
+    <td>{{n.email|lowercase}}</td>
+    </tr>
+    </table>
+</div>
